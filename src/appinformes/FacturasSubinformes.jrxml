@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FacturasSubinformes" pageWidth="595" pageHeight="1000" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f8c9c2db-a613-4d0f-b1d6-413070b2c63f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="HSQLDB test"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="FacturasSubInforme1" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<parameter name="FacturasSubInforme2" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "FIRSTNAME",
+	"LASTNAME",
+	"STREET",
+	"ID"
+FROM "ADDRESS"
+ORDER BY "ADDRESS"."ID" ASC]]>
+	</queryString>
+	<field name="FIRSTNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FIRSTNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="FIRSTNAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
+	</field>
+	<field name="LASTNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LASTNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="LASTNAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
+	</field>
+	<field name="STREET" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STREET"/>
+		<property name="com.jaspersoft.studio.field.label" value="STREET"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="545" height="33" backcolor="#FAAB50" uuid="3283d894-f10a-4dbd-be53-d7a6b65cb5b0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="25" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Listado de Facturas (Subconsultas)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="203" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="5" y="5" width="140" height="30" backcolor="#FFFDCC" uuid="8e5f0a31-4939-4f51-b7e8-88551c232df9"/>
+				<textField>
+					<reportElement x="80" y="0" width="60" height="30" uuid="34f45d28-b20c-445b-81e4-1f3fa75118f5">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7432f019-8238-4708-9510-29fb8a602f9c"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Serif" size="18" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="5" y="5" width="80" height="30" uuid="3538d3b4-c27d-4142-9e5b-e4ebb38935fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="25" y="50" width="100" height="20" uuid="818e1929-5511-4fd6-b5fc-a4329d1e1f8d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="631f3a60-4c1d-437d-b26d-e48e6610a22e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="50" width="100" height="20" uuid="8c795793-df7d-4c84-98c3-785e7a69a9d2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c0da259-6087-41bd-9c7c-caf05287700d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="80" width="245" height="20" uuid="9dec453f-aa9e-4ea4-a21c-89a369baf51c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ef31418-28b3-4fba-b88a-9f2f9a82065d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{STREET}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="110" width="545" height="50" uuid="2ede8ba6-9e49-4ba9-b6ef-458ee33b3e50"/>
+				<subreportParameter name="ID_ADDRESS">
+					<subreportParameterExpression><![CDATA[$F{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{FacturasSubInforme1}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="250" y="160" width="200" height="40" uuid="24f32cb4-9f28-4408-9668-28ee25e37afa"/>
+				<subreportParameter name="ID_ADDRESS">
+					<subreportParameterExpression><![CDATA[$F{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{FacturasSubInforme2}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="20" width="100" height="30" uuid="650b5167-4f15-47a8-946a-a0ac99e10ec4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="280" y="20" width="100" height="30" uuid="361b6720-eeb6-4356-bd9b-af9e40167831"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
